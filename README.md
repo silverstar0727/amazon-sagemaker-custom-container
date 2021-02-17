@@ -35,6 +35,8 @@ chmod +x build-and-push.sh
 ~~~
 
 ## 모델 생성 & 배포
+jupyter lab에서 새로운 노트북을 하나 만들고 아래의 명령어를 통해 모델을 생성하고 배포하자
+
 ~~~
 import sagemaker
 
