@@ -35,14 +35,39 @@ chmod +x build-and-push.sh
 ~~~
 
 ## 모델 생성 & 배포
-jupyter lab에서 새로운 노트북을 하나 만들고 아래의 명령어를 통해 모델을 생성하고 배포하자
 
-~~~
-import sagemaker
+1. model 버튼을 아래 그림과 같이 클릭하자. 
 
-estimator = sagemaker.estimator.Estimator(image_uri = <계정아이디>.dkr.ecr.<리전이름>.amazonaws.com/test, role = sagemaker.get_execution_role(), instance_count = 1, instance_type = 'ml.m5.xlarge')
+    ![sagemakerModel](./images/sagemakerModel.png)
 
-estimator.fit()
+    ![sagemakerModel2](./images/sagemakerModel2.png)
 
-estimator.deploy(1, 'ml.m5.xlarge')
-~~~
+1. 새로운 IAM role을 만들고 Image와 s3 bucket에서 모델파일을 가져오자.  
+
+    ![sagemakerModel2_5](./images/sagemakerModel2_5.png)
+
+    ![sagemakerModel3](./images/sagemakerModel3.png)
+
+
+
+## 엔드포인트 구성
+
+1. SageMaker에서 Endpoint 구성에 들어가자.  
+
+    ![sagemakerEndpointConf](./images/sagemakerEndpointConf.png)
+
+    ![sagemakerEndpointConf2](./images/sagemakerEndpointConf2.png)
+
+    ![sagemakerEndpointConf3](./images/sagemakerEndpointConf3.png)
+
+
+
+## 엔드포인트 생성
+
+1. SageMaker에서 엔드포인트에 들어가자.
+
+1. 엔드포인트 생성을 아래의 그림과 같이 진행하자
+
+    ![sagemakerEndpoint](./images/sagemakerEndpoint.png)
+
+    ![sagemakerEndpointSuccess](./images/sagemakerEndpointSuccess.png)
